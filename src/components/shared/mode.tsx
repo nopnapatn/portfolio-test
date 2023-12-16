@@ -1,6 +1,5 @@
 "use client"
 
-import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
@@ -10,8 +9,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Label } from "@/components/ui/label"
+import { Switch } from "@/components/ui/switch"
+import { Moon, Sun } from "lucide-react"
 
-export function ModeToggle() {
+export function ModeSelect() {
   const { setTheme } = useTheme()
 
   return (
@@ -38,5 +40,23 @@ export function ModeToggle() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+  )
+}
+
+export function ModeSwitch() {
+  const { setTheme, theme } = useTheme()
+  return (
+    <>
+      <div className="flex justify-between items-center space-x-2 w-full">
+        <Label htmlFor="appearance-mode">Appearance</Label>
+        <Switch
+          id="appearance-mode"
+          checked={theme == "dark" ? true : false}
+          onCheckedChange={() => {
+            theme == "dark" ? setTheme("light") : setTheme("dark")
+          }}
+        />
+      </div>
+    </>
   )
 }
