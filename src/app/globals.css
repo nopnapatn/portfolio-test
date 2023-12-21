@@ -74,3 +74,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+.prose p {
+  @apply my-6;
+}
+
+.prose a {
+  @apply text-primary font-semibold underline decoration-2;
+}
+
+.prose pre {
+  @apply bg-zinc-800 p-2 my-6 rounded-md overflow-y-hidden;
+}
+
+.prose code {
+  @apply text-primary-foreground dark:text-primary;
+}
+
+.prose pre code {
+  @apply text-base;
+}

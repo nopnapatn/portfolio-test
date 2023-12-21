@@ -3,7 +3,6 @@
 import Link from "next/link"
 import * as React from "react"
 
-import { Icons } from "@/components/shared/icons"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,9 +10,9 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
+import { GhostIcon } from "lucide-react"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -69,9 +68,9 @@ export default function NavigationMenuDemo() {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <Icons.logo className="h-6 w-6" />
+                    <GhostIcon className="h-6 w-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      NOPNAPATN
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components built with Radix UI and
@@ -125,7 +124,7 @@ export default function NavigationMenuDemo() {
             legacyBehavior
             passHref
           >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
               Documentation
             </NavigationMenuLink>
           </Link>

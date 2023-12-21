@@ -1,3 +1,4 @@
+import { Footer } from "@/components/layout/footer"
 import { Header } from "@/components/layout/header"
 import ThemeProvider from "@/components/theme-provider"
 import type { Metadata } from "next"
@@ -26,7 +27,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <div className=" pt-20">{children}</div>
+          <div className="pt-20 min-h-screen">{children}</div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
